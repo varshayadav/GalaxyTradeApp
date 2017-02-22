@@ -1,3 +1,6 @@
+package RomanNumbers;
+
+import RomanNumbers.*;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,7 +1,11 @@
+package RomanNumbers;
+
+import RomanNumbers.IRomanNumber;
+import RomanNumbers.InvalidRomanNumeralOperation;
+import RomanNumbers.RomanNumber;
+import RomanNumbers.XRomanNumber;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class IRomanNumberTest {
 

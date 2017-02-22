@@ -1,12 +1,15 @@
-public class DRomanNumber extends RomanNumber {
-    public DRomanNumber() {
-        super("D", 500);
+package RomanNumbers;
+
+public class IRomanNumber extends RomanNumber {
+    public IRomanNumber() {
+        super("I", 1);
     }
 
     @Override
     public int minus(RomanNumber other) throws InvalidRomanNumeralOperation {
-        if (other.getClass() == CRomanNumber.class)
+        if (other.getClass() == IRomanNumber.class)
             return value - other.value;
         throw new InvalidRomanNumeralOperation();
     }
+
 }

@@ -1,6 +1,7 @@
+package RomanExpression;
+
+import RomanNumbers.*;
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class RomanExpressionTest {
         RomanNumber vRomanNumber = new VRomanNumber();
         List<RomanNumber> roman_number_sequence1 = new ArrayList(Arrays.asList(vRomanNumber));
         RomanExpression romanExpression = new RomanExpression(roman_number_sequence1);
-        Assert.assertEquals(5, romanExpression.evaluate_expression(), 0);
+        Assert.assertEquals(5, romanExpression.evaluateExpression(), 0);
 
     }
 
@@ -51,37 +52,39 @@ public class RomanExpressionTest {
 
         List<RomanNumber> roman_number_sequence = new ArrayList(Arrays.asList(mRomanNumber, cRomanNumber, mRomanNumber, xRomanNumber,
                 lRomanNumber, iRomanNumber, vRomanNumber));
-        RomanExpression romanExpression = RomanExpressionFactory.create(roman_number_sequence);
-        Assert.assertEquals(1944, romanExpression.evaluate_expression(), 0);
+        RomanExpression romanExpression = new RomanExpression(roman_number_sequence);
+        Assert.assertEquals(1944, romanExpression.evaluateExpression(), 0);
     }
 
     @Test
     public void shoul_validate_if_CCC() throws Exception, InvalidRomanExpression {
         RomanNumber cRomanNumber = new CRomanNumber();
         List<RomanNumber> roman_number_sequence = new ArrayList(Arrays.asList(cRomanNumber, cRomanNumber, cRomanNumber));
-        RomanExpression romanExpression = RomanExpressionFactory.create(roman_number_sequence);
+        RomanExpression romanExpression = new RomanExpression(roman_number_sequence);
     }
 
     @Test(expected = InvalidRomanExpression.class)
     public void shoul_not_validate_if_IIII() throws Exception, InvalidRomanExpression {
         RomanNumber iRomanNumber = new IRomanNumber();
         List<RomanNumber> roman_number_sequence = new ArrayList(Arrays.asList(iRomanNumber, iRomanNumber, iRomanNumber, iRomanNumber));
-        RomanExpression romanExpression = RomanExpressionFactory.create(roman_number_sequence);
+        RomanExpression romanExpression = new RomanExpression(roman_number_sequence);
+        romanExpression.evaluateExpression();
     }
 
     @Test
-    public void shoul_validate_if_MMMCM() throws Exception, InvalidRomanExpression {
+    public void should_validate_if_MMMCM() throws Exception, InvalidRomanExpression {
         RomanNumber mRomanNumber = new MRomanNumber();
         RomanNumber cRomanNumber = new CRomanNumber();
         List<RomanNumber> roman_number_sequence = new ArrayList(Arrays.asList(mRomanNumber, mRomanNumber, mRomanNumber, cRomanNumber, mRomanNumber));
-        RomanExpression romanExpression = RomanExpressionFactory.create(roman_number_sequence);
+        RomanExpression romanExpression = new RomanExpression(roman_number_sequence);
     }
 
     @Test(expected = InvalidRomanExpression.class)
     public void should_not_validate_if_D_is_repeated() throws Exception, InvalidRomanExpression {
         RomanNumber dRomanNumber = new DRomanNumber();
         List roman_number_sequence = new ArrayList(Arrays.asList(dRomanNumber, dRomanNumber));
-        RomanExpression romanExpression = RomanExpressionFactory.create(roman_number_sequence);
+        RomanExpression romanExpression = new RomanExpression(roman_number_sequence);
+        romanExpression.evaluateExpression();
     }
 
     @Test
@@ -89,7 +92,7 @@ public class RomanExpressionTest {
         RomanNumber cRomanNumber = new CRomanNumber();
         RomanNumber lRomanNumber = new LRomanNumber();
         List roman_number_sequence = new ArrayList(Arrays.asList(cRomanNumber, lRomanNumber));
-        RomanExpression romanExpression = RomanExpressionFactory.create(roman_number_sequence);
+        RomanExpression romanExpression = new RomanExpression(roman_number_sequence);
     }
 
 

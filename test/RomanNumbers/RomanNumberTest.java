@@ -1,4 +1,6 @@
-import org.junit.Assert;
+package RomanNumbers;
+
+import RomanNumbers.*;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

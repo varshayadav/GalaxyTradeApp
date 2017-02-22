@@ -1,3 +1,7 @@
+package RomanNumbers;
+
+import RomanNumbers.RomanNumber;
+
 public class CRomanNumber extends RomanNumber {
     public CRomanNumber() {
         super("C", 100);

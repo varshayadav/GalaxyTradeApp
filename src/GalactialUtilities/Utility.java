@@ -1,3 +1,5 @@
+package GalactialUtilities;
+
 public class Utility {
     private final String name;
     private final float cost;
@@ -11,7 +13,11 @@ public class Utility {
         return cost;
     }
 
-    public float calculateCredits(float quantity) throws Exception {
+    public float calculateCredits(float quantity) {
         return cost * quantity;
+    }
+
+    public String getName() {
+        return name;
     }
 }
